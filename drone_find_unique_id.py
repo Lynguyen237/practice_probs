@@ -9,6 +9,7 @@
 
 # Example [1,3,2,2,1,4,3] # Answer: 4
 
+# METHOD 1
 def find_unique_delivery_id(delivery_ids):
     # Loop through the list of IDs
     # Add each item to a new set
@@ -26,3 +27,16 @@ def find_unique_delivery_id(delivery_ids):
         return i
 
 print(find_unique_delivery_id([1,3,2,2,1,4,3]))
+
+# METHOD 2
+def find_unique_delivery_id2(delivery_ids):
+    unique_id = 0
+
+    for delivery_id in delivery_ids:
+        unique_id ^= delivery_id
+    
+    return unique_id
+
+print(find_unique_delivery_id2([1,3,2,2,1,4,3]))
+
+
