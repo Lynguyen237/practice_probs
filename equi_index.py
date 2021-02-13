@@ -42,7 +42,7 @@
 def equi_index(A) -> list:
     
     if len(A) == 0:
-        return 0
+        return -1
     
     result_set = set()
 
