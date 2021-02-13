@@ -46,11 +46,10 @@ def equi_index(A) -> list:
     
     result_set = set()
 
-    left_sum = 0
-    right_sum = 0
-
     for i in range(len(A)):
-        print(i)
+        left_sum = 0
+        right_sum = 0
+        # print(i)
         for j in range(0,i):
             left_sum += A[j]
             # print(f'j {j}, A[j] {A[j]}, left_sum {left_sum}')
@@ -60,8 +59,6 @@ def equi_index(A) -> list:
 
         if left_sum == right_sum:
             result_set.add(i)
-        
-        left_sum = right_sum = 0
     
     if len(result_set) == 0:
         return -1
