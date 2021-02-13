@@ -63,8 +63,14 @@ def equi_index(A) -> list:
         
         left_sum = right_sum = 0
     
+    if len(result_set) == 0:
+        return -1
+        
     return result_set
 
 
-print(equi_index([-1,3,-4,5,1,-6,2,1]))
-print(equi_index([0,0,0,0,0,0,0,1]))
+print(equi_index([-1,3,-4,5,1,-6,2,1])) # 1, 3, 7
+print(equi_index([0,0,0,0,0,0,0,1])) # 7
+print(equi_index([1,0,0,0,0,0,0,1])) # 1,2,3,4,5,6
+print(equi_index([1,0,0,0,0,0,0,0])) # 0
+print(equi_index([1,2,3,0,0,0,0,0])) # -1
