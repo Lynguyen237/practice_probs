@@ -1,4 +1,4 @@
-# Write a function:
+# [Codility] Write a function:
 
 # def solution(A)
 
