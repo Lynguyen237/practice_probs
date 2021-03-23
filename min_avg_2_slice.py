@@ -78,3 +78,5 @@ def prefix_sums(A):
     return P
 
 print(prefix_sums([1,2,3,4,5])) # [0, 1, 3, 6, 10, 15]
+
+# Still not optimal solution when using prefix_sum https://app.codility.com/demo/results/trainingRE9ZGT-M6P/
