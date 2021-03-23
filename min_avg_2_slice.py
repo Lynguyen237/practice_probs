@@ -1,3 +1,4 @@
+# Codility - Lesson 5, prefix_sum https://codility.com/media/train/3-PrefixSums.pdf
 # A non-empty array A consisting of N integers is given. A pair of integers (P, Q), such that 0 ≤ P < Q < N, is called a slice of array A (notice that the slice contains at least two elements). The average of a slice (P, Q) is the sum of A[P] + A[P + 1] + ... + A[Q] divided by the length of the slice. To be precise, the average equals (A[P] + A[P + 1] + ... + A[Q]) / (Q − P + 1).
 
 # For example, array A such that:
@@ -65,3 +66,15 @@ def solution(A):
 # [5,9,9,5,9] #0
 # [1000,99,50,-100] #2
 # [0,100,-10,100] #0
+
+# Prefix Sums Explained
+def prefix_sums(A):
+    n = len(A)
+    P = [0] * (n + 1)
+
+    for k in range(1, n + 1):
+        P[k] = P[k - 1] + A[k - 1]
+    
+    return P
+
+print(prefix_sums([1,2,3,4,5])) # [0, 1, 3, 6, 10, 15]
