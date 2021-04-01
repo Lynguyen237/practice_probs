@@ -5,6 +5,7 @@
 # Input: root = [1,2,2,null,3,null,3]
 # Output: false
 
+
 # Definition for a binary tree node.
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
@@ -24,6 +25,7 @@ n2 = TreeNode(2, n5, n6)
 n1 = TreeNode(2, n3, n4)
 root = TreeNode(1, n1, n2)
 
+
 #==== Solution using recursion (O(n) time and space complexity)====
 def isSymmetric(root: TreeNode) -> bool:
     if root is None:
@@ -41,5 +43,31 @@ def isMirror(n1, n2):
                isMirror(n1.right, n2.left)
 
 
-print(isSymmetric(root))
+#==== Solution2 (no recursion) ====
+def isSymmetric2(root: TreeNode) -> bool:
+    if root is None:
+        return True
+    
+    stack = []
+    stack.append(root.left)
+    stack.append(root.right)
+
+    while stack:
+        left, right = stack.pop(), stack.pop()
+        
+        if left is None and right is None:
+            continue
+
+        if left is None or right is None or left.val != right.val:
+            return False
+        
+        stack.append(left.left)
+        stack.append(right.right)
+
+        stack.append(left.right)
+        stack.append(right.left)
+    
+    return True
+
+print(isSymmetric2(root))
 # Reference https://github.com/kamyu104/LeetCode-Solutions/blob/master/Python/symmetric-tree.py
