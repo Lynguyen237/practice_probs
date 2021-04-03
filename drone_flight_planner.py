@@ -64,6 +64,10 @@ def calc_drone_min_energy(route):
   
   return highest_point - route[0][2]
 
+#==== One liner solution ====
+def calc_drone_min_energy(route):
+  return max([h for _,_,h in route]) - route[0][2]
+
 # We are using only one auxiliary variable in the algorithm, 
 # highest_point, and it uses a constant amount of space.
 
