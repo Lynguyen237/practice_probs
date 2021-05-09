@@ -51,9 +51,6 @@ class LinkedList:
             prev_node.next = new_node # Point the previous node to the new node
 
 
-    def rotate_llist(self):
-        pass
-
 # ===========================================
 # https://www.youtube.com/watch?v=FSsriWQ0qYE
 # First example
