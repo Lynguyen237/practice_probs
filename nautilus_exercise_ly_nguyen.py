@@ -7,40 +7,42 @@
 
 def f():
     """ Main function """
-    if A:
-        z()
-        b_helper()
-    else:
+    if not A:
         s()
-
-    return False
+        return False
+    
+    z()
+    b_helper()
 
 
 def d_helper():
     """ Helper function if condition D is met """
-    if D:
-        w()
-        return True
-    else:
+    if not D:
         v()
+        return False
+    
+    w()
+    return True
 
 
 def c_helper():
     """ Helper function if condition C is met """
-    if C:
-        x()
-        d_helper()
-    else:
+    if not C:
         u()
+        return False
+    
+    x()
+    d_helper()
 
 
 def b_helper():
     """ Helper function if condition B is met """
-    if B:
-        y()
-        c_helper()
-    else:
+    if not B:
         t()
+        return False
+    
+    y()
+    c_helper()
 
 
 # ===== Original ====
