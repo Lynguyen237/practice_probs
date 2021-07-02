@@ -3,7 +3,55 @@
 # ● Simplicity
 # ● Maintainability
 
-# ==== Refactored code ===
+# ==== Refactored codes - Option 1
+''' 
+Cerate smaller helper functions and eliminate unnecessary return False statements 
+This is the closet to the original code with clear if/else statements for each condition A, B, C, D
+'''
+
+def f():
+    """ Main function """
+    if A:
+        z()
+        b_helper()
+    else:
+        s()
+
+    return False
+
+
+def d_helper():
+    """ Helper function if condition D is met """
+    if D:
+        w()
+        return True
+    else:
+        v()
+
+
+def c_helper():
+    """ Helper function if condition C is met """
+    if C:
+        x()
+        d_helper()
+    else:
+        u()
+
+
+def b_helper():
+    """ Helper function if condition B is met """
+    if B:
+        y()
+        c_helper()
+    else:
+        t()
+
+
+# ==== Refactored codes - Option 2
+''' 
+Create smaller helper functions and eliminate else statements. 
+In each function, we quickly return False if a given condition is not met.
+'''
 
 def f():
     """ Main function """
@@ -16,7 +64,7 @@ def f():
 
 
 def d_helper():
-    """ Helper function if condition D is met """
+    """ Helper function for condition D """
     if not D:
         v()
         return False
@@ -26,7 +74,7 @@ def d_helper():
 
 
 def c_helper():
-    """ Helper function if condition C is met """
+    """ Helper function for condition C """
     if not C:
         u()
         return False
@@ -36,7 +84,7 @@ def c_helper():
 
 
 def b_helper():
-    """ Helper function if condition B is met """
+    """ Helper function for condition B """
     if not B:
         t()
         return False
@@ -45,7 +93,7 @@ def b_helper():
     c_helper()
 
 
-# ===== Original ====
+# ===== Original codes 
 def f():
     if A:
         z()
